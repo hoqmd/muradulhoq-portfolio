@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muradul Hoq | PMP Project Manager & Visual Storyteller</title>
+    <!-- Google Fonts for Poppins (Headings) and Lato (Body) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Placeholder for Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- CSS STYLES (style.css content inserted here) -->
+    <style>
+        /* --- 🎨 Design System & Base Reset --- */
+        :root {
+            --color-primary: #0C1B33; /* Deep Navy */
+            --color-accent: #F5B041; /* Warm Gold */
+            --color-background: #F9FAFB; /* Soft White */
+            --color-text-dark: #333333;
+            --color-text-light: #ffffff;
+            --spacing-lg: 4rem;
+            --spacing-md: 2rem;
+            --spacing-sm: 1rem;
+            --font-heading: 'Poppins', sans-serif;
+            --font-body: 'Lato', sans-serif;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--color-text-dark);
+            line-height: 1.6;
+            background-color: var(--color-background);
+        }
+
+        /* --- Typography --- */
+        h1, h2, h3, h4, .logo {
+            font-family: var(--font-heading);
+            color: var(--color-primary);
+            line-height: 1.2;
+        }
+
+        h1 { font-size: 3.5rem; }
+        h2 { font-size: 2.5rem; }
+        h3 { font-size: 1.5rem; }
+
+        a {
+            text-decoration: none;
+            color: var(--color-primary);
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: var(--color-accent);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+            font-weight: 700;
+        }
+
+        /* --- Layout & Utility --- */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-padding {
+            padding: var(--spacing-lg) 0;
+        }
+
+        .bg-light {
+            background-color: #f3f5f8; /* Slightly darker than main BG for contrast */
+        }
+
+        /* --- 1. Buttons --- */
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px; /* Rounded edges */
+            font-weight: 600;
+            text-align: center;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s, transform 0.2s;
+        }
+
+        .btn-primary {
+            background-color: var(--color-accent);
+            color: var(--color-primary);
+            border-color: var(--color-accent);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--color-primary);
+            color: var(--color-accent);
+            border-color: var(--color-primary);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--color-text-light);
+            border-color: var(--color-text-light);
+            margin-left: var(--spacing-sm);
+        }
+        .hero-actions .btn-secondary { /* Specific color for hero section */
+            color: var(--color-text-light);
+            border-color: var(--color-text-light);
+        }
+
+        .hero-actions .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--color-accent);
+            border-color: var(--color-accent);
+            transform: translateY(-2px);
+        }
+
+        .read-more {
+            font-weight: 600;
+            color: var(--color-accent);
+            display: inline-block;
+            margin-top: var(--spacing-sm);
+        }
+
+        .read-more:hover {
+            color: var(--color-primary);
+        }
+
+        /* --- Header & Nav --- */
+        .main-header {
+            background-color: var(--color-primary);
+            padding: var(--spacing-sm) 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .main-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            color: var(--color-accent);
+            font-weight: 700;
+        }
+
+        .main-nav a {
+            color: var(--color-text-light);
+            margin-left: var(--spacing-md);
+            font-weight: 400;
+            text-transform: uppercase;
+            font-size: 0.95rem;
+        }
+
+        .main-nav a:hover {
+            color: var(--color-accent);
+        }
+
+        .nav-toggle {
+            display: none; /* Hidden on desktop */
+            background: none;
+            border: none;
+            color: var(--color-accent);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* --- 1. Hero Section --- */
+        .hero-section {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-color: var(--color-primary);
+            /* Placeholder: Replace with actual image or video background */
+            background-image: url('https://placehold.co/1920x1080/0C1B33/F5B041?text=Cinematic+Hero+Banner');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Dark cinematic overlay */
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: var(--color-text-light);
+            max-width: 800px;
+            padding: var(--spacing-md);
+        }
+
+        .hero-content .headline {
+            color: var(--color-accent);
+            font-size: 4.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .hero-content .subheadline {
+            font-size: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .hero-content .tagline {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto var(--spacing-lg);
+            font-style: italic;
+            font-weight: 300;
+        }
+
+        .hero-content strong {
+            color: var(--color-accent);
+            font-weight: 600;
+        }
+
+        .hero-actions {
+            margin-top: var(--spacing-md);
+        }
+
+        /* 1. Highlights Section */
+        .highlights-section {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--spacing-md);
+            padding: var(--spacing-md) 0;
+            text-align: center;
+            margin-top: calc(-1 * var(--spacing-lg)); /* Pull up into the hero section */
+            position: relative;
+            z-index: 5;
+        }
+
+        .highlight-item {
+            background-color: var(--color-text-light);
+            padding: var(--spacing-md);
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .highlight-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .highlight-item .icon-xl {
+            font-size: 2.5rem;
+            color: var(--color-accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-item h3 {
+            margin-bottom: 0.25rem;
+            color: var(--color-primary);
+        }
+
+        /* --- 2. About Section --- */
+        .about-content {
+            display: flex;
+            gap: var(--spacing-lg);
+            align-items: center;
+        }
+
+        .about-image {
+            flex: 1;
+            max-width: 400px;
+        }
+
+        .portrait-img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(12, 27, 51, 0.3); /* Shadow using primary color */
+        }
+
+        .about-text {
+            flex: 2;
+        }
+
+        .about-text h2 {
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .bio-text {
+            margin-bottom: var(--spacing-md);
+            font-size: 1.1rem;
+        }
+
+        .key-highlights {
+            list-style: none;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .key-highlights li {
+            padding: 0.4rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .key-highlights i {
+            color: var(--color-accent);
+            margin-right: 0.5rem;
+        }
+
+        /* --- 3. Professional Projects --- */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-md);
+        }
+
+        .project-card {
+            background-color: var(--color-text-light);
+            padding: var(--spacing-md);
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            border-left: 5px solid var(--color-primary); /* Accent border */
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            border-left-color: var(--color-accent);
+        }
+
+        .project-card h3 {
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .card-description strong {
+            font-weight: 700;
+            color: var(--color-accent);
+        }
+
+        /* --- 4. Creative Portfolio --- */
+        .portfolio-filters {
+            text-align: center;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .filter-btn {
+            background: none;
+            border: 1px solid var(--color-primary);
+            padding: 0.5rem 1rem;
+            margin: 0 0.5rem;
+            border-radius: 50px;
+            color: var(--color-primary);
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+            font-weight: 600;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background-color: var(--color-accent);
+            color: var(--color-primary);
+            border-color: var(--color-accent);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-md);
+        }
+
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: block;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .hover-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(12, 27, 51, 0.9); /* Deep Navy semi-transparent */
+            color: var(--color-text-light);
+            padding: var(--spacing-sm);
+            transform: translateY(100%);
+            transition: transform 0.4s ease-in-out;
+        }
+
+        .portfolio-item:hover .hover-caption {
+            transform: translateY(0);
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .hover-caption h4 {
+            color: var(--color-accent);
+            margin-bottom: 0.25rem;
+        }
+        .hover-caption p {
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        /* --- 5. Blog Section --- */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-md);
+        }
+
+        .blog-card {
+            background-color: var(--color-text-light);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: box-shadow 0.3s;
+        }
+
+        .blog-card:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: var(--spacing-md);
+        }
+
+        .card-content .category {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            background-color: #fce5c8; /* Light Gold */
+            padding: 0.2rem 0.6rem;
+            border-radius: 50px;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-content h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        /* --- 6. Contact Section --- */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: var(--spacing-lg);
+            align-items: flex-start;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: var(--spacing-sm);
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: var(--font-body);
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+        }
+
+        .contact-info-area h3 {
+            color: var(--color-primary);
+            margin-top: var(--spacing-md);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-info-area .contact-detail {
+            margin-bottom: 0.75rem;
+        }
+
+        .contact-info-area .fa-envelope,
+        .contact-info-area .fa-map-marker-alt {
+            color: var(--color-accent);
+            margin-right: 0.5rem;
+        }
+
+        .social-links a {
+            font-size: 1.5rem;
+            margin-right: var(--spacing-sm);
+            color: var(--color-primary);
+        }
+
+        .social-links a:hover {
+            color: var(--color-accent);
+        }
+
+        .map-embed {
+            margin-top: var(--spacing-sm);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .map-embed iframe {
+            display: block;
+        }
+
+        /* --- 7. Footer --- */
+        .main-footer {
+            background-color: var(--color-primary);
+            color: #aaa;
+            padding: var(--spacing-md) 0;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .main-footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            color: var(--color-accent);
+            font-weight: 700;
+        }
+
+        .footer-nav a {
+            color: #aaa;
+            margin: 0 var(--spacing-sm);
+        }
+
+        .footer-nav a:hover {
+            color: var(--color-accent);
+        }
+
+        /* --- Animations (Initial State) --- */
+        [data-animation] {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        [data-animation="fade-up"] {
+            transform: translateY(20px);
+        }
+        [data-animation="fade-right"] {
+            transform: translateX(-20px);
+        }
+        [data-animation="fade-left"] {
+            transform: translateX(20px);
+        }
+        [data-animation="fade-in"] {
+            transform: none;
+        }
+        /* .animated class will be added by JavaScript */
+
+
+        /* ==================================================================== */
+        /* --- 📱 Responsive Design (Mobile First) --- */
+        /* ==================================================================== */
+
+        /* Tablet and Smaller Desktop (Breakpoint: 992px) */
+        @media (max-width: 992px) {
+            /* About */
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .about-image {
+                max-width: 300px;
+                margin-bottom: var(--spacing-md);
+            }
+            /* Projects & Blog */
+            .project-grid, .blog-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+            /* Contact */
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Mobile Devices (Breakpoint: 768px) */
+        @media (max-width: 768px) {
+            h1 { font-size: 3rem; }
+            h2 { font-size: 2rem; }
+            
+            .main-header .container {
+                padding: 0 var(--spacing-sm);
+            }
+
+            /* Mobile Nav Toggle */
+            .main-nav {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--color-primary);
+                flex-direction: column;
+                align-items: center;
+                padding: var(--spacing-sm) 0;
+                transform: scaleY(0);
+                transform-origin: top;
+                transition: transform 0.3s ease-out;
+            }
+
+            .main-nav.open {
+                transform: scaleY(1);
+            }
+
+            .main-nav a {
+                margin: 0.5rem 0;
+                padding: 0.5rem 0;
+                width: 80%;
+                text-align: center;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .nav-toggle {
+                display: block;
+            }
+            
+            /* Hero */
+            .hero-content .headline { font-size: 3rem; }
+            .hero-content .subheadline { font-size: 1.2rem; }
+            .hero-actions a {
+                display: block;
+                margin: var(--spacing-sm) 0;
+            }
+
+            /* Highlights */
+            .highlights-section {
+                grid-template-columns: 1fr 1fr;
+                padding: var(--spacing-sm) 0;
+            }
+
+            /* Footer */
+            .main-footer .container {
+                flex-direction: column;
+                gap: var(--spacing-sm);
+            }
+            .footer-nav a {
+                display: inline-block;
+                margin: 0.5rem 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <a href="#home" class="logo">MH">MH</a>
+            <nav class="main-nav">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#creative">Creative</a>
+                <a href="#blog">Blog</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1. HOME SECTION (Hero) -->
+        <section id="home" class="hero-section">
+            <div class="hero-content">
+                <h1 class="headline" data-animation="fade-up">Muradul Hoq</h1>
+                <p class="subheadline" data-animation="fade-up" data-delay="100">Project Manager | Visual Storyteller | Creative Thinker</p>
+                <p class="tagline" data-animation="fade-up" data-delay="200">Bridging **strategy** and **creativity** through leadership, technology, and storytelling.</p>
+                <div class="hero-actions" data-animation="fade-up" data-delay="300">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                </div>
+            </div>
+            <!-- Looping background video placeholder -->
+            <div class="video-overlay"></div>
+            <!-- Note: Replace the background image placeholder in CSS above with your actual video or high-res static image -->
+        </section>
+
+        <section class="highlights-section container">
+            <div class="highlight-item" data-animation="fade-in">
+                <i class="fas fa-chart-line icon-xl"></i>
+                <h3>Project Management</h3>
+                <p>Driving digital transformation with PMP-certified precision and strategic oversight.</p>
+            </div>
+            <div class="highlight-item" data-animation="fade-in" data-delay="100">
+                <i class="fas fa-video icon-xl"></i>
+                <h3>Videography</h3>
+                <p>Crafting compelling narratives and capturing the art of motion for impactful stories.</p>
+            </div>
+            <div class="highlight-item" data-animation="fade-in" data-delay="200">
+                <i class="fas fa-camera icon-xl"></i>
+                <h3>Photography</h3>
+                <p>Framing moments in time, focusing on cinematic composition and natural light.</p>
+            </div>
+            <div class="highlight-item" data-animation="fade-in" data-delay="300">
+                <i class="fas fa-pen-nib icon-xl"></i>
+                <h3>Blogging</h3>
+                <p>Sharing insights on leadership, technology, travel, and the creative process.</p>
+            </div>
+        </section>
+
+        <!-- 2. ABOUT SECTION -->
+        <section id="about" class="about-section container section-padding">
+            <div class="about-content">
+                <div class="about-image" data-animation="fade-right">
+                    <!-- Placeholder image -->
+                    <img src="https://placehold.co/400x450/0C1B33/F9FAFB?text=Muradul+Hoq+Portrait" alt="Muradul Hoq Portrait" class="portrait-img">
+                </div>
+                <div class="about-text" data-animation="fade-left">
+                    <h2>Meet Muradul Hoq</h2>
+                    <p class="bio-text">
+                        I’m **Muradul Hoq**, a PMP-certified Project Manager at Seamless Distribution Systems. I lead high-stakes digital transformation initiatives while nurturing a lifelong passion for creativity — from visual storytelling and filmmaking to photography. I believe the best leaders are also the best storytellers.
+                    </p>
+
+                    <ul class="key-highlights">
+                        <li><i class="fas fa-bullseye"></i> **10+ Years** of Project Management Experience</li>
+                        <li><i class="fas fa-brain"></i> **PMP Certified** | Agile Practitioner</li>
+                        <li><i class="fas fa-clapperboard"></i> **50+** Video Stories Produced</li>
+                    </ul>
+
+                    <a href="/assets/muradul-hoq-cv.pdf" class="btn btn-primary" target="_blank" data-animation="fade-up" data-delay="100">Download CV <i class="fas fa-download"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. PROFESSIONAL PROJECTS SECTION -->
+        <section id="projects" class="projects-section section-padding bg-light">
+            <div class="container">
+                <h2 class="section-title" data-animation="fade-up">Professional Projects</h2>
+                <div class="project-grid">
+                    <!-- Project Card 1 -->
+                    <article class="project-card" data-animation="fade-in">
+                        <h3 class="card-title">ERP Implementation for SDS</h3>
+                        <p class="card-description">Led a cross-functional team delivering a comprehensive ERP rollout across 3 regions, improving operational visibility by **22%**.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </article>
+                    <!-- Project Card 2 -->
+                    <article class="project-card" data-animation="fade-in" data-delay="100">
+                        <h3 class="card-title">Global SaaS Migration</h3>
+                        <p class="card-description">Oversaw the successful migration of 500+ users to a new cloud-based SaaS platform, completing the project **15% under budget**.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </article>
+                    <!-- Project Card 3 -->
+                    <article class="project-card" data-animation="fade-in" data-delay="200">
+                        <h3 class="card-title">Digital Process Automation</h3>
+                        <p class="card-description">Designed and deployed automated workflows for the finance department, reducing manual processing time by **40 hours/week**.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. CREATIVE PORTFOLIO SECTION -->
+        <section id="creative" class="creative-section section-padding">
+            <div class="container">
+                <h2 class="section-title" data-animation="fade-up">Creative Portfolio</h2>
+
+                <div class="portfolio-filters" data-animation="fade-up" data-delay="100">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="photo">Photography</button>
+                    <button class="filter-btn" data-filter="video">Videography</button>
+                    <button class="filter-btn" data-filter="edit">Editing</button>
+                </div>
+
+                <div class="portfolio-grid">
+                    <!-- Video Example -->
+                    <a href="https://youtu.be/example" target="_blank" class="portfolio-item video" data-animation="fade-in">
+                        <img src="https://placehold.co/500x300/333333/F5B041?text=Video+Story+Thumbnail" alt="Andamanik River Documentary Thumbnail">
+                        <div class="hover-caption">
+                            <h4>"Andamanik River – Story of Silence"</h4>
+                            <p>Short documentary clip. **Watch on YouTube.**</p>
+                        </div>
+                    </a>
+                    <!-- Photo Example 1 -->
+                    <a href="#" class="portfolio-item photo" data-animation="fade-in" data-delay="100">
+                        <img src="https://placehold.co/500x300/333333/F5B041?text=Street+Photography" alt="Street Photography Dhaka">
+                        <div class="hover-caption">
+                            <h4>Dhaka Street Life</h4>
+                            <p>Cinematic capture of urban hustle.</p>
+                        </div>
+                    </a>
+                    <!-- Editing Example -->
+                    <a href="#" class="portfolio-item edit" data-animation="fade-in" data-delay="200">
+                        <img src="https://placehold.co/500x300/333333/F5B041?text=Color+Grade+Sample" alt="Color Grading Sample">
+                        <div class="hover-caption">
+                            <h4>Post-Production: Color Grade</h4>
+                            <p>Before/After color grading for a short film.</p>
+                        </div>
+                    </a>
+                    <!-- Photo Example 2 -->
+                    <a href="#" class="portfolio-item photo" data-animation="fade-in" data-delay="300">
+                        <img src="https://placehold.co/500x300/333333/F5B041?text=Landscape+Reflection" alt="Bangladesh Landscape">
+                        <div class="hover-caption">
+                            <h4>Reflections: Sylhet</h4>
+                            <p>Landscape photography focusing on water.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. BLOG SECTION -->
+        <section id="blog" class="blog-section section-padding bg-light">
+            <div class="container">
+                <h2 class="section-title" data-animation="fade-up">Latest Insights & Stories</h2>
+                <div class="blog-grid">
+                    <!-- Blog Card 1: Leadership & Projects -->
+                    <article class="blog-card" data-animation="fade-in">
+                        <img src="https://placehold.co/400x200/555555/F9FAFB?text=Leadership" alt="Leadership in Tech">
+                        <div class="card-content">
+                            <span class="category">Leadership & Projects</span>
+                            <h3>The Art of the Scrappy Project Manager</h3>
+                            <p>A look at how to maintain quality and vision when resources are tight and deadlines loom...</p>
+                            <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    <!-- Blog Card 2: Travel & Reflections -->
+                    <article class="blog-card" data-animation="fade-in" data-delay="100">
+                        <img src="https://placehold.co/400x200/555555/F9FAFB?text=Travel" alt="Travel Photo">
+                        <div class="card-content">
+                            <span class="category">Travel & Reflections</span>
+                            <h3>Finding Silence on the Andamanik River</h3>
+                            <p>My travel notes from the recent trip, and the story behind the documentary short film...</p>
+                            <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    <!-- Blog Card 3: Creative Editing Tips -->
+                    <article class="blog-card" data-animation="fade-in" data-delay="200">
+                        <img src="https://placehold.co/400x200/555555/F9FAFB?text=Editing+Tips" alt="Editing Software">
+                        <div class="card-content">
+                            <span class="category">Creative Editing Tips</span>
+                            <h3>Three Techniques for Cinematic Color Grading</h3>
+                            <p>A quick guide to achieving that high-end, professional look in Premiere Pro or DaVinci Resolve...</p>
+                            <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. CONTACT SECTION -->
+        <section id="contact" class="contact-section section-padding">
+            <div class="container contact-grid">
+                <div class="contact-form-area" data-animation="fade-right">
+                    <h2 class="section-title">Get In Touch</h2>
+                    <!-- Note: You MUST replace 'your_unique_id' with your actual Formspree endpoint after signing up on Formspree.io to receive emails. -->
+                    <form action="https://formspree.io/f/your_unique_id" method="POST" class="contact-form">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="_replyto" placeholder="Your Email" required>
+                        <textarea name="message" rows="5" placeholder="Your Message / Inquiry" required></textarea>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+                
+                <div class="contact-info-area" data-animation="fade-left">
+                    <h3>Contact Details</h3>
+                    <p class="contact-detail"><i class="fas fa-envelope"></i> **Email:** <a href="mailto:hello@muradulhoq.com">hello@muradulhoq.com</a></p>
+                    
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="https://linkedin.com/in/muradulhoq" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin icon-md"></i></a>
+                        <a href="https://youtube.com/user/muradulhoq" target="_blank" aria-label="YouTube"><i class="fab fa-youtube icon-md"></i></a>
+                        <a href="https://facebook.com/muradulhoq" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f icon-md"></i></a>
+                        <a href="https://instagram.com/muradulhoq" target="_blank" aria-label="Instagram"><i class="fab fa-instagram icon-md"></i></a>
+                    </div>
+                    
+                    <h3 class="mt-2">Location</h3>
+                    <p class="contact-detail"><i class="fas fa-map-marker-alt"></i> **Dhaka, Bangladesh**</p>
+                    <!-- Map Embed -->
+                    <div class="map-embed">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14608.067300717202!2d90.3921124!3d23.74609875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8823f668589%3A0x74272898c1995166!2sDhaka%2C%20Bangladesh!5e0!3m2!1sen!2sus!4v1698710400000!5m2!1sen!2sus" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 7. FOOTER SECTION -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-logo">MH</div>
+            <nav class="footer-nav">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#blog">Blog</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <p class="copyright">
+                Copyright &copy; 2025 Muradul Hoq | All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT (script.js content inserted here) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // -----------------------------------------------------------------
+            // 1. Mobile Navigation Toggle
+            // -----------------------------------------------------------------
+            const navToggle = document.querySelector('.nav-toggle');
+            const mainNav = document.querySelector('.main-nav');
+
+            navToggle.addEventListener('click', () => {
+                mainNav.classList.toggle('open');
+            });
+
+            // Close nav when a link is clicked (for smooth scroll)
+            document.querySelectorAll('.main-nav a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (mainNav.classList.contains('open')) {
+                        mainNav.classList.remove('open');
+                    }
+                });
+            });
+
+            // -----------------------------------------------------------------
+            // 2. Scroll-Triggered Fade-In Animations (Modular Approach)
+            // -----------------------------------------------------------------
+            const animatedElements = document.querySelectorAll('[data-animation]');
+
+            const observerOptions = {
+                root: null, // viewport
+                threshold: 0.1, // trigger when 10% of element is visible
+                rootMargin: '0px'
+            };
+
+            const observerCallback = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const element = entry.target;
+                        const delay = element.getAttribute('data-delay') || 0;
+                        
+                        setTimeout(() => {
+                            element.classList.add('animated');
+                            element.style.opacity = 1;
+                            element.style.transform = 'none';
+                        }, delay);
+
+                        observer.unobserve(element); // Stop observing once animated
+                    }
+                });
+            };
+
+            const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+            animatedElements.forEach(element => {
+                observer.observe(element);
+            });
+
+            // Add CSS class for the animated state (opacity is 1 and transform is reset)
+            const style = document.createElement('style');
+            style.innerHTML = `
+                .animated {
+                    opacity: 1 !important;
+                    transform: none !important;
+                }
+            `;
+            document.head.appendChild(style);
+
+
+            // -----------------------------------------------------------------
+            // 3. Simple Portfolio Filtering (Optional)
+            // -----------------------------------------------------------------
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Update active button state
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    const filter = button.getAttribute('data-filter');
+
+                    portfolioItems.forEach(item => {
+                        if (filter === 'all' || item.classList.contains(filter)) {
+                            item.style.display = 'block';
+                            // Re-trigger fade-in on filtered items (simple solution)
+                            item.style.opacity = 1;
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+        });
+    </script>
+
+</body>
+</html>
